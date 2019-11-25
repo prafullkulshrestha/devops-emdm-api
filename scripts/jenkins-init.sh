@@ -30,6 +30,10 @@ echo "deb http://pkg.jenkins.io/debian-stable binary/" >> /etc/apt/sources.list
 apt-get update
 apt-get install -y openjdk-8-jdk maven jenkins=${JENKINS_VERSION} unzip docker.io 
 
+# Update terraform
+wget https://releases.hashicorp.com/terraform/0.12.3/terraform_0.12.3_linux_amd64.zip
+unzip terraform_0.12.3_linux_amd64.zip
+mv terraform /usr/local/bin/
 # install docker-compose and curl
 #apt-get install curl
 #curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
