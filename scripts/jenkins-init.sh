@@ -31,8 +31,8 @@ apt-get update
 apt-get install -y openjdk-8-jdk maven jenkins=${JENKINS_VERSION} unzip docker.io 
 
 # Update terraform
-wget https://releases.hashicorp.com/terraform/0.12.3/terraform_0.12.3_linux_amd64.zip
-unzip terraform_0.12.3_linux_amd64.zip
+wget https://releases.hashicorp.com/terraform/0.12.13/terraform_0.12.13_linux_amd64.zip
+unzip terraform_0.12.13_linux_amd64.zip
 mv terraform /usr/local/bin/
 # install docker-compose and curl
 #apt-get install curl
