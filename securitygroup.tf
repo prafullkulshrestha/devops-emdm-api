@@ -10,8 +10,8 @@ resource "aws_security_group" "ecs-securitygroup" {
   }
 
   ingress {
-    from_port       = 3000
-    to_port         = 3000
+    from_port       = 5555
+    to_port         = 5555
     protocol        = "tcp"
     security_groups = [aws_security_group.myapp-elb-securitygroup.id]
   }

@@ -6,7 +6,11 @@ output "jenkins" {
   value = aws_instance.jenkins-instance.public_ip
 }
 
-output "myapp-repository-URL" {
-  value = aws_ecr_repository.myapp.repository_url
+output "myapp-app-repository-URL" {
+  value = aws_ecr_repository.myapp-app.repository_url
+}
+
+output "myapp-db-repository-URL" {
+  value = aws_ecr_repository.myapp-db.repository_url
 }
 

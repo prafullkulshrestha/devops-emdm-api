@@ -3,7 +3,8 @@
 data "template_file" "myapp-task-definition-template" {
   template = file("templates/app.json.tpl")
   vars = {
-    REPOSITORY_URL = replace(aws_ecr_repository.myapp.repository_url, "https://", "")
+    APP_REPOSITORY_URL = replace(aws_ecr_repository.myapp-app.repository_url, "https://", "")
+    DB_REPOSITORY_URL = replace(aws_ecr_repository.myapp-db.repository_url, "https://", "")
     APP_VERSION    = var.MYAPP_VERSION
   }
 }
@@ -24,8 +25,8 @@ resource "aws_ecs_service" "myapp-service" {
 
   load_balancer {
     elb_name       = aws_elb.myapp-elb.name
-    container_name = "myapp"
-    container_port = 3000
+    container_name = "myapp-app"
+    container_port = 8888
   }
   lifecycle {
     ignore_changes = [task_definition]
@@ -37,7 +38,7 @@ resource "aws_elb" "myapp-elb" {
   name = "myapp-elb"
 
   listener {
-    instance_port     = 3000
+    instance_port     = 5555
     instance_protocol = "http"
     lb_port           = 80
     lb_protocol       = "http"
@@ -47,7 +48,7 @@ resource "aws_elb" "myapp-elb" {
     healthy_threshold   = 3
     unhealthy_threshold = 3
     timeout             = 30
-    target              = "HTTP:3000/"
+    target              = "HTTP:5555/"
     interval            = 60
   }
 
