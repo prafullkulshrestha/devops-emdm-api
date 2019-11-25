@@ -28,7 +28,12 @@ mount /var/lib/jenkins
 wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 echo "deb http://pkg.jenkins.io/debian-stable binary/" >> /etc/apt/sources.list
 apt-get update
-apt-get install -y openjdk-8-jre-headless jenkins=${JENKINS_VERSION} unzip docker.io 
+apt-get install -y openjdk-8-jdk maven jenkins=${JENKINS_VERSION} unzip docker.io 
+
+# install docker-compose and curl
+#apt-get install curl
+#curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+#chmod +x /usr/local/bin/docker-compose
 
 # enable docker and add perms
 usermod -G docker jenkins
