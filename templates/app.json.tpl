@@ -19,6 +19,10 @@
     "cpu": 256,
     "image": "${DB_REPOSITORY_URL}:${APP_VERSION}",
     "portMappings": [
+      {
+      "containerPort": 5432,
+      "hostPort": 5432
+      }
     ]
   }
 ]
