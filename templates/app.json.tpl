@@ -26,7 +26,11 @@
       "containerPort": 5432,
       "hostPort": 5432
       }
-    ]
+    ],
+    "environment" : [
+    { "name" : "POSTGRES_USER", "value" : "emdm_user" },
+    { "name" : "POSTGRES_PASSWORD", "value" : "testing" }
+]
   }
 ]
 
