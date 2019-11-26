@@ -10,6 +10,9 @@
             "containerPort": 8888,
             "hostPort": 5555
         }
+    ],
+    "Links":[
+      "myapp-db"
     ]
   },
   {
