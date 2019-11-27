@@ -48,7 +48,7 @@ resource "aws_elb" "myapp-elb" {
     healthy_threshold   = 3
     unhealthy_threshold = 3
     timeout             = 30
-    target              = "HTTP:5555/"
+    target              = "HTTP:5555/api/swagger-ui.html"
     interval            = 60
   }
 
