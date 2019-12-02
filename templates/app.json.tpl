@@ -28,8 +28,8 @@
       }
     ],
     "environment" : [
-    { "name" : "POSTGRES_USER", "value" : "emdm_user" },
-    { "name" : "POSTGRES_PASSWORD", "value" : "testing" }
+    { "name" : "POSTGRES_USER", "value" : "${DB_USERNAME}" },
+    { "name" : "POSTGRES_PASSWORD", "value" : "${DB_PASSWORD}" }
 ]
   }
 ]

@@ -42,3 +42,7 @@ variable "JENKINS_VERSION" {
   default = "2.190.3"
 }
 
+variable  DB_USERNAME {}
+
+variable  DB_PASSWORD {}
+

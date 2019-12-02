@@ -6,6 +6,8 @@ data "template_file" "myapp-task-definition-template" {
     APP_REPOSITORY_URL = replace(aws_ecr_repository.myapp-app.repository_url, "https://", "")
     DB_REPOSITORY_URL = replace(aws_ecr_repository.myapp-db.repository_url, "https://", "")
     APP_VERSION    = var.MYAPP_VERSION
+    DB_USERNAME = var.DB_USERNAME
+    DB_PASSWORD = var.DB_PASSWORD
   }
 }
 
